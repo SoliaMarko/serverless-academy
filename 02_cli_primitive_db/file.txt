@@ -1,0 +1,15 @@
+{
+  "userName": "Solia",
+  "gender": "female",
+  "age": 34
+}
+{
+  "userName": "Mark",
+  "gender": "male",
+  "age": 45
+}
+{
+  "userName": "Iren",
+  "gender": "male",
+  "age": 54
+}

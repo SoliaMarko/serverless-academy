@@ -1,0 +1,15 @@
+{
+  "name": "serverless-academy",
+  "version": "1.0.0",
+  "description": "primitive db app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "save": "^2.9.0"
+  }
+}
