@@ -2,13 +2,14 @@ const { Command } = require('commander');
 const program = new Command();
 const TelegramBot = require('node-telegram-bot-api');
 
-const token = '6951171999:AAENxr9VkYYKig0R2nBDI4VKp8pR0IdNjSw';
+const token = process.env.TOKEN;
 const bot = new TelegramBot(token, { polling: true });
-const chatId = 564718353;
+let chatId = process.env.CHAT_ID;
 
 main();
 
 // *** UTILS ***
+
 async function main() {
   // send-message-util
   program
@@ -37,6 +38,7 @@ async function main() {
 }
 
 // *** TELEGRAM HANDLERS ***
+
 // send-message-handler
 function sendMessageToBot(message) {
   if (!message) console.log('Write some text.');
@@ -50,3 +52,12 @@ function sendPhotoToBot(path) {
   bot.sendPhoto(chatId, path);
   console.log('You successfully sent photo to your bot');
 }
+
+// *** GET CHAT_ID ***
+
+// bot.on('message', msg => {
+//   const chatId = msg.chat.id;
+//   console.log(chatId);
+
+//   bot.sendMessage(chatId, 'Received your message');
+// });
