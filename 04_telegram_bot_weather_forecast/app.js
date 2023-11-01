@@ -1,3 +1,3 @@
-const { launchBot } = require('./api_handlers/telegram-bot-interface');
+const { launchBot } = require('./telegram-bot-interface');
 
 launchBot();

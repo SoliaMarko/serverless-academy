@@ -16,4 +16,8 @@ function getConvertedDate(dateTxt) {
   return `${month} ${day}, ${hour}:${minute}`;
 }
 
-module.exports = { getTempInCelsius, getConvertedDate };
+function getHoursInMiliseconds(hours) {
+  return hours * 60 * 60 * 1000;
+}
+
+module.exports = { getTempInCelsius, getConvertedDate, getHoursInMiliseconds };

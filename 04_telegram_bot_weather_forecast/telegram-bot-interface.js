@@ -1,7 +1,8 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-const { getWeatherFromAPI } = require('./weather-api');
-const { apiUrl } = require('./weather-api-config');
+const { getWeatherFromAPI } = require('./api_handlers/weather-api');
+const { apiUrl } = require('./api_handlers/weather-api-config');
+const { getHoursInMiliseconds } = require('./additional/helpers');
 
 const TOKEN = process.env.TOKEN;
 
@@ -143,7 +144,7 @@ async function sendForecast(msg, hoursInterval) {
       } catch (error) {
         console.error('Error sending periodic forecast:', error);
       }
-    }, hoursInterval * 60 * 1000);
+    }, getHoursInMiliseconds(hoursInterval));
   } catch (err) {
     console.error('Error sending initial forecast:', err);
   }
